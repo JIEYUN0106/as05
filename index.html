@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁範例</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --rose: #E9AFC0;
+            --pink: #F7DDE5;
+            --cream: #FFF8F5;
+            --wine: #754C5B;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: auto;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, "Microsoft JhengHei", sans-serif;
+            color: #333333;
+        }
+
+        /* 頂部 Banner */
+        .top-banner {
+            background-color: var(--rose);
+            color: var(--wine);
+        }
+
+        .top-banner h1 {
+            margin: 0;
+        }
+
+        /* Section Banner：一個視窗的高度 */
+        .banner-div {
+            height: 100vh;
+            min-height: 400px;
+            background-color: var(--rose);
+            color: var(--wine);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 長的 Section 內容區 */
+        .content-div {
+            padding: 2rem;
+            min-height: calc(200vh - 8rem);
+        }
+
+        /* 左右留白 */
+        .content-padding {
+            padding: 0 2rem;
+        }
+
+        /* 淺色背景 */
+        .section-bg {
+            background-color: var(--cream);
+        }
+
+        /* 中間內容框 */
+        .content-bg {
+            background-color: var(--pink);
+            padding: 1rem;
+            border-radius: 5px;
+            color: var(--wine);
+        }
+
+        .content-bg h3 {
+            color: var(--wine);
+        }
+
+        /* 導覽列 */
+        .navbar {
+            z-index: 1000;
+        }
+
+        .navbar-light .navbar-brand,
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--wine);
+            transition: color 0.2s ease;
+            border-radius: 5px;
+        }
+
+        .navbar-light .navbar-brand:hover,
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: #4a2f3a;
+            background-color: transparent;
+        }
+
+        /* 導覽列選取狀態 */
+        .navbar-light .navbar-nav .nav-link.active,
+        .navbar-light .navbar-brand.active {
+            color: #4a2f3a !important;
+            font-weight: bold;
+            background-color: transparent !important;
+        }
+
+        /* 手機版 */
+        @media (max-width: 767.98px) {
+            .content-div {
+                padding: 1.5rem 1rem;
+            }
+
+            .content-padding {
+                padding: 0 1rem;
+            }
+
+            .banner-div h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 頂部 Banner -->
+    <header class="container-fluid top-banner text-center py-5" id="home">
+        <h1>這裡是Banner</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+
+        <a class="navbar-brand" href="#home">首頁</a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="切換導覽列"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#section1">區段1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section2">區段2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section3">區段3</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Section 1 (保留 py-5 白邊) -->
+    <section id="section1" class="py-5">
+        <div class="banner-div">
+            <h2>區段1 Banner</h2>
+        </div>
+
+        <div class="content-div section-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-8 content-padding">
+                        <div class="content-bg">
+                            <h3>區段1 內容</h3>
+                            <p>
+                                這是區段1的內容。Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Nullam in libero
+                                nec dolor luctus bibendum.
+                            </p>
+                            <p>
+                                Quisque vel quam nec massa dictum varius ac eu urna.
+                                Suspendisse ut tristique ex.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 (保留 py-5 白邊) -->
+    <section id="section2" class="py-5">
+        <div class="banner-div">
+            <h2>區段2 Banner</h2>
+        </div>
+
+        <div class="content-div section-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-8 content-padding">
+                        <div class="content-bg">
+                            <h3>區段2 內容</h3>
+                            <p>
+                                這是區段2的內容。Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Nullam in libero
+                                nec dolor luctus bibendum.
+                            </p>
+                            <p>
+                                Quisque vel quam nec massa dictum varius ac eu urna.
+                                Suspendisse ut tristique ex.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 (保留 py-5 白邊) -->
+    <section id="section3" class="py-5">
+        <div class="banner-div">
+            <h2>區段3 Banner</h2>
+        </div>
+
+        <div class="content-div section-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-8 content-padding">
+                        <div class="content-bg">
+                            <h3>區段3 內容</h3>
+                            <p>
+                                這是區段3的內容。Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Nullam in libero
+                                nec dolor luctus bibendum.
+                            </p>
+                            <p>
+                                Quisque vel quam neb massa dictum varius ac eu urna.
+                                Suspendisse ut tristique ex.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap 4 相依套件 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+    <!-- 平滑捲動與選取狀態控制 -->
+    <script>
+        $(document).ready(function () {
+            let animationFrame = null;
+            let animationStart = null;
+            let startPosition = 0;
+            let targetPosition = 0;
+            let duration = 600;
+
+            function animateScroll(timestamp) {
+                if (animationStart === null) {
+                    animationStart = timestamp;
+                }
+
+                const elapsed = timestamp - animationStart;
+                const progress = Math.min(elapsed / duration, 1);
+
+                const eased = progress < 0.5
+                    ? 4 * progress * progress * progress
+                    : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+                window.scrollTo(
+                    0,
+                    startPosition + (targetPosition - startPosition) * eased
+                );
+
+                if (progress < 1) {
+                    animationFrame = requestAnimationFrame(animateScroll);
+                } else {
+                    animationFrame = null;
+                    animationStart = null;
+                }
+            }
+
+            $('nav a[href^="#"]').on('click', function (event) {
+                const targetId = $(this).attr('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (!targetElement) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                // 更新選取狀態樣式
+                $('nav a').removeClass('active');
+                $(this).addClass('active');
+
+                if (animationFrame !== null) {
+                    cancelAnimationFrame(animationFrame);
+                    animationFrame = null;
+                }
+
+                startPosition = window.scrollY;
+                animationStart = null;
+
+                const navbar = document.querySelector('.navbar');
+                const navbarHeight = navbar
+                    ? navbar.getBoundingClientRect().height
+                    : 0;
+
+                // 針對「首頁 (#home)」特別處理
+                if (targetId === '#home') {
+                    targetPosition = 0;
+                } else {
+                    // 尋找該 section 內部的粉紅色區塊 (.banner-div)
+                    const bannerDiv = targetElement.querySelector('.banner-div');
+                    
+                    if (bannerDiv) {
+                        // 如果有找到粉紅色區塊，我們把目標精確對齊到「粉紅色區塊的頂端」扣掉導覽列高度
+                        targetPosition = Math.max(
+                            0,
+                            window.scrollY +
+                            bannerDiv.getBoundingClientRect().top -
+                            navbarHeight
+                        );
+                    } else {
+                        // 預備備用方案：對齊 section 頂端扣掉導覽列
+                        targetPosition = Math.max(
+                            0,
+                            window.scrollY +
+                            targetElement.getBoundingClientRect().top -
+                            navbarHeight
+                        );
+                    }
+                }
+
+                // 手機版點擊後收合導覽列
+                $('.navbar-collapse').collapse('hide');
+
+                animationFrame = requestAnimationFrame(animateScroll);
+
+                history.replaceState(null, '', targetId);
+            });
+        });
+    </script>
+
+</body>
+</html>
